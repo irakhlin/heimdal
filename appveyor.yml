@@ -15,8 +15,8 @@ build_script:
   - set WIXDIR="c:\Program Files (x86)\Windows Installer XML v3.5"
   # We're not doing any codesigning in the Appveyor build yet.
   - SET CODESIGN_PKT=0000000000000000
-  - set PATH=%PATH%;C:\Python26;C:\Perl64\bin;C:\tools\cygwin\bin;C:\Program Files (x86)\HTML Help Workshop
-  - set PATH=%PATH%;C:/msys64/usr/bin
+  - set PATH=%PATH%;C:\Python26;C:\Perl64\bin;C:\cygwin64\bin;C:\Program Files (x86)\HTML Help Workshop
+  - set PATH=%PATH%;C:\msys64\usr\bin
   - set PATH=%PATH%;C:\program files (x86)\windows installer xml v3.5\bin;C:\cygwin\bin
   - set dbg__type=Debug
   - title Heimdal Build %CPU% %dbg__type%
@@ -40,7 +40,7 @@ on_failure:
 # To get RDP access to an appveyor worker for debugging a build, just
 # uncomment these next two lines and the last two lines too.
 #init:
-#  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 # Uncomment this to allow the RDP session to continue after the build
 # finishes.
@@ -50,5 +50,5 @@ on_failure:
 # of this writing.
 #
 #on_finish:
-#  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
