@@ -4,8 +4,8 @@
 # users, and is free for public repositories.
 #
 init:
-  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  
 install:
   - C:\msys64\usr\bin\bash -lc "pacman --needed --noconfirm -Sy pacman-mirrors"
   - C:\msys64\usr\bin\bash -lc "pacman --noconfirm -Sy"
@@ -19,7 +19,7 @@ build_script:
   - SET CODESIGN_PKT=0000000000000000
   - set PATH=%PATH%;C:\Python26;C:\Perl64\bin;C:\Program Files (x86)\HTML Help Workshop;C:\msys64\usr\bin
   - set PATH=%PATH%;C:\program files (x86)\windows installer xml v3.5\bin;C:\cygwin64\bin
-  - set dbg__type=Debug
+  - set dbg__type=Release
   - title Heimdal Build %CPU% %dbg__type%
   - echo PATH=%PATH%
   # Newer texinfo has no .exe's, so we have to invoke it as
