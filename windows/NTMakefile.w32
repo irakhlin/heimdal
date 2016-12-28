@@ -117,22 +117,22 @@ RC=rc
 #----------------------------------------------------------------
 # Program macros
 
-AWK_CMD=gawk.exe
-YACC_CMD=bison.exe
-LEX_CMD=flex.exe
-PYTHON=python.exe
+AWK_CMD=C:\msys64\usr\bin\gawk.exe
+YACC_CMD=C:\msys64\usr\bin\bison.exe
+LEX_CMD=C:\msys64\usr\bin\flex.exe
+PYTHON=C:\Python26\python.exe
 PERL=perl.exe
-CMP=cmp.exe
+CMP=C:\msys64\usr\bin\cmp.exe
 MAKECAT=makecat.exe
 HHC=hhc.exe
-MAKEINFO=makeinfo.exe
-SED=sed.exe
+MAKEINFO=C:\msys64\usr\bin\makeinfo
+SED=C:\msys64\usr\bin\sed.exe
 
 CANDLE_CMD=candle.exe
 LIGHT_CMD=light.exe
 
 # Only used for tests
-SH=sh.exe
+SH=C:\msys64\usr\bin\sh.exe
 
 # Commands
 AWK=$(AWK_CMD)
