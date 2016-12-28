@@ -17,8 +17,7 @@ build_script:
   - set WIXDIR="c:\Program Files (x86)\Windows Installer XML v3.5"
   # We're not doing any codesigning in the Appveyor build yet.
   - SET CODESIGN_PKT=0000000000000000
-  - set PATH=C:\Python26;C:\Perl64\bin;C:\Program Files (x86)\HTML Help Workshop;%PATH%
-  - set PATH=%PATH%;C:\msys64\usr\bin
+  - set PATH=C:\Python26;C:\Perl64\bin;C:\Program Files (x86)\HTML Help Workshop;C:\msys64\usr\bin;%PATH%
   - set PATH=%PATH%;C:\program files (x86)\windows installer xml v3.5\bin;C:\cygwin64\bin
   - set dbg__type=Debug
   - title Heimdal Build %CPU% %dbg__type%
