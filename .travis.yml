@@ -24,7 +24,7 @@ notifications:
 
 
 addons:
-
+    artifacts: true
     coverity_scan:
         project:
             name: "heimdal/heimdal"
