@@ -9,7 +9,7 @@ init:
 install:
   - C:\msys64\usr\bin\bash -lc "pacman --needed --noconfirm -Sy pacman-mirrors"
   - C:\msys64\usr\bin\bash -lc "pacman --noconfirm -Sy"
-  - C:\msys64\usr\bin\bash -lc "pacman --noconfirm -S autoconf automake bison flex"
+  - C:\msys64\usr\bin\bash -lc "pacman --noconfirm -S sed texinfo diffutils autoconf automake bison flex"
 
 build_script:
   - set PSDKDir=C:\Program Files\Microsoft SDKs\Windows\v7.1
@@ -17,9 +17,9 @@ build_script:
   - set WIXDIR="c:\Program Files (x86)\Windows Installer XML v3.5"
   # We're not doing any codesigning in the Appveyor build yet.
   - SET CODESIGN_PKT=0000000000000000
-  - set PATH=%PATH%;C:\Python26;C:\Perl64\bin;C:\cygwin64\bin;C:\Program Files (x86)\HTML Help Workshop
+  - set PATH=C:\Python26;C:\Perl64\bin;C:\Program Files (x86)\HTML Help Workshop;%PATH%
   - set PATH=%PATH%;C:\msys64\usr\bin
-  - set PATH=%PATH%;C:\program files (x86)\windows installer xml v3.5\bin;C:\cygwin\bin
+  - set PATH=%PATH%;C:\program files (x86)\windows installer xml v3.5\bin;C:\cygwin64\bin
   - set dbg__type=Debug
   - title Heimdal Build %CPU% %dbg__type%
   - echo PATH=%PATH%
